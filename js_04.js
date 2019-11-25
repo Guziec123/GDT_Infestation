@@ -3,14 +3,16 @@ window.onload = function main() {
     var data = [
         {
             name: "Wild MicroWave",
-            image:"http://nadwoch.pl/wp-content/uploads/2019/09/microwave-kopia-1.png",
+            image:"http://nadwoch.pl/wp-content/uploads/2019/11/microwave-kopia-1-kopia.png",
             specialAttack: "",
             hp: 70,
-            hp2: 100
+            hp2: 100,
+            page:"index_03.html"
+            
         },
         {
-            name: "Microwave",
-            image:"//static.pokemonpets.com/images/monsters-images-300-300/2025-Shiny-Pikachu.png",
+            name: "The Fridge",
+            image:"http://nadwoch.pl/wp-content/uploads/2019/11/fringe-kopia-e1573078821899.png",
             specialAttack: "",
             hp: 90,
             hp2: 100
@@ -25,7 +27,9 @@ window.onload = function main() {
     ];
     //variables 
    // let barEnterWidthInner = 100; 
-    let enemyNumber = 0;
+
+    var enemyNumber = localStorage.getItem("OpontentNum");
+    
     let playerName = document.getElementById("playerName").innerHTML= localStorage.getItem("PlayerName");
     let overlay = document.getElementById("overlay");
     let overlayH1 = document.getElementById("overlayH1");
@@ -69,7 +73,7 @@ window.onload = function main() {
       barEnterWidthInner = barEnterWidthInner - 5;
       console.log(barEnterWidthInner)
         playerBar.style.width= barEnterWidthInner + "%";
-      imagePlayer.classList.add("shake");
+        imagePlayer.classList.add("shake");
       
       setTimeout(function () {
             imagePlayer.classList.remove("shake");
@@ -80,8 +84,13 @@ window.onload = function main() {
         if (enemyBar.style.width == 0 + "%") {
             overlay.style.display = "block";
             overlayH1.innerHTML = "You Defeted" + " " +data[enemyNumber].name;
-            enemyNumber = enemyNumber + 1;
-          
+            
+             
+            enemyNumber =  parseInt(enemyNumber)  + 1 ;
+            var oponentSes = enemyNumber;
+            localStorage.setItem("OpontentNum", oponentSes);
+            console.log(enemyNumber)
+            console.log(localStorage.getItem("OpontentNum")); 
             playerBar.style.width=100+"%";
             barEnterWidthInner = data[enemyNumber].hp2;
             enemyBar.style.width =  data[enemyNumber].hp2 +"%"; }

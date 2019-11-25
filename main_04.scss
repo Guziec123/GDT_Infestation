@@ -89,7 +89,7 @@ body{
 }
 .imageEnemy>img{
     width:170px;
-    height:auto;
+    max-height:200px;
     margin-left:10px;
 }
 
@@ -146,7 +146,7 @@ body{
 .dialogBox{
   border:2px solid #4e473f;
   width:98%;
-  height:30%;
+  height:25%;
   border-radius:10px;
   background:#827c6c;
   margin-bottom:5px;
