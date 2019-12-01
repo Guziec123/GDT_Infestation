@@ -1,8 +1,9 @@
 $maincolor: #4e4737;
 $bordercolor:  #655e54;
+$font2P: 'Press Start 2P';
 body{
 
- font-family: 'Press Start 2P', sans-serif;
+ font-family: 'Press Start 2P';
  color: $maincolor;
 }
 #overlay {
@@ -31,9 +32,6 @@ body{
   border-right: 5px solid black;
   position: relative;
 }
-.images{
-
-}
 
 .RowEnemy{
   display:flex;
@@ -48,6 +46,9 @@ body{
 }
 .nameEnemy{
   margin-left:50px;
+  color:#4e4737;  
+  font-family: 'Press Start 2P';
+  
 }
 .barEnemy{
   margin-left:50px;
@@ -58,6 +59,8 @@ body{
 }
 .barEnemy>p{
   margin-left:3px;
+  color:#4e4737;  
+  font-family: 'Press Start 2P';
 }
 .barProgresEnemy{
   
@@ -94,12 +97,12 @@ body{
 }
 
 
-
 .RowPlayer{
   display:flex;
   flex-direction:row;
   height:30%;
   position:relative;
+  margin-top:70px;
 }
 .playerPic{
  margin:0 0 5px 50px;
@@ -129,6 +132,8 @@ body{
 }
 .barPlayer>p{
   margin-left:3px;
+  color:#4e4737;  
+  font-family: 'Press Start 2P';
 }
 .barProgresPlayer{
   width:80%;
@@ -155,6 +160,8 @@ body{
 .dialogBox>p{
   font-family: 'Press Start 2P';
   margin:20px 20px 20px 20px;
+  color:#4e4737;  
+ 
 }
 .dialogBox>button{
   font-family: 'Press Start 2P';
@@ -196,4 +203,10 @@ body{
   80% { transform: translate(-1px, -1px) rotate(1deg); }
   90% { transform: translate(1px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+#playerName{
+  color:#4e4737;  
+  font-family: 'Press Start 2P';
+ 
 }

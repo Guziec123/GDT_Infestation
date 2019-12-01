@@ -28,7 +28,7 @@ body{
   position: fixed;
 }
 .image{
-    
+  
   width:100%;
   z-index:0;
   transition-property: all;
@@ -52,7 +52,7 @@ body{
 @keyframes header-animation {
   0%{ 
    left: 0%;  }
-  100%{ width:120%;  left: -20%;    opacity:0;}
+  100%{ width:180%;  left: -20%;    opacity:0;}
   
  
 }
