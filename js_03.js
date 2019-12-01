@@ -8,7 +8,9 @@ window.onload = function main() {
   let right = document.getElementById("right");
   var epilog = document.getElementById("epilog");
   let imgOverlay = document.querySelector('.imgOverlay');
-
+  let shelfleft = document.querySelector(".leftShelf");
+  let shelfright = document.querySelector(".rightShelf");
+  let dialog = document.getElementById("dialog");
   setTimeout(function () {
     var n = 0;
     var str = " You enter the GDT and it seems oddly quiet .... too quiet... ";
@@ -27,6 +29,11 @@ window.onload = function main() {
       right.disabled = false;
     } else {
       //button disable
+      shelfright.style.display = "none";
+      shelfleft.style.display = "none";
+      dialog.style.display = "none";
+      left.style.display = "none";
+      right.style.display = "none";
       left.disabled = true;
       right.disabled = true;
       //fride enter
