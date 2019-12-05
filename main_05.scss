@@ -1,0 +1,83 @@
+$maincolor: #4e4737;
+$bordercolor:  #655e54;
+body{
+
+ font-family: 'Press Start 2P', sans-serif;
+ color: $maincolor;
+}
+
+.main{
+  margin:0 auto;
+  background:#999383;
+  width:600px;
+  height:580px;
+  border-left: 5px solid black;
+  border-right: 5px solid black;
+  position: relative;
+}
+.imgOverlayInner{
+  display:flex;
+  flex-direction:row;
+}
+.imgOverlay{
+  position:absolute;
+    top: 360px;
+    left: 35%;
+    bottom: 0;
+    right: 0;
+}
+.leftShelf{
+  margin-right:60px;
+
+}
+.rightShelf{
+
+}
+
+.mainImg{
+  width:100%;
+}
+
+.mainImg{
+  margin-bottom:40px;
+}
+
+.dialogBox{
+  border:2px solid #4e473f;
+  width:98%;
+  height:30%;
+  border-radius:10px;
+  background:#827c6c;
+  margin-bottom:5px;
+  margin-left:5px;
+}
+.dialogBox>p{
+  font-family: 'Press Start 2P';
+  margin:20px 20px 20px 20px;
+}
+.dialogBox>button{
+  font-family: 'Press Start 2P';
+  margin:20px 20px 20px 20px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  font-weight:700;
+  color:#4e4737;
+  postion:relative;
+}
+#right{
+  cursor:pointer;
+}
+.pointerArr::before {
+  postion: absolute;
+  margin-right:5px; 
+  margin-bottom:2px;
+  content:" ";
+  border: solid #4e4737;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
