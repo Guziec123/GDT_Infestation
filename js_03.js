@@ -1,4 +1,4 @@
-window.onload = function main() {
+window.onload = () => {
   var local = parseInt(localStorage.getItem("OpontentNum"));
   let all = document.getElementById("maininner");
   let attackAni = document.querySelector(".attackAnimation");
@@ -11,15 +11,17 @@ window.onload = function main() {
   let shelfleft = document.querySelector(".leftShelf");
   let shelfright = document.querySelector(".rightShelf");
   let dialog = document.getElementById("dialog");
-  setTimeout(function () {
+  setTimeout(() => {
     var n = 0;
     var str = " You enter the GDT and it seems oddly quiet .... too quiet... ";
 
-    setInterval(function () {
+
+    setInterval(() => {
       n = n + 1;
       epilog.innerHTML = str.slice(0, n);
     }, 80);
   }, 300);
+
 
   function hide_and_show() {
     if (local == 1) {
@@ -37,33 +39,32 @@ window.onload = function main() {
       left.disabled = true;
       right.disabled = true;
       //fride enter
-      setTimeout(function () {
+      setTimeout(() => {
         epilog.style.display = "none";
         all.style.display = "none";
         attackAni.style.display = "block";
-        setTimeout(function(){
-          location.replace("index_04.html");          
-        },2500)
-        }, 8000);
+        setTimeout(() => {
+          location.replace("index_04.html");
+        }, 2500)
+      }, 8000);
     }
   }
   hide_and_show();
-
-
-
+//declaration of buttons function
   function pointerAdd(a, b, c, d) {
     a.classList.add("pointerArr");
     b.classList.remove("pointerArr");
     c.classList.add("pointerArr");
     d.classList.remove("pointerArr");
   }
-  right.onclick = function () {
+
+  right.onclick = () => {
     pointerAdd(right, left, elevator, shop);
   };
-  left.onclick = function () {
+  left.onclick = () => {
     pointerAdd(left, right, shop, elevator);
   };
-  document.onkeydown = function (event) {
+  document.onkeydown = (event) => {
     switch (event.keyCode) {
       case 37:
         right.classList.remove("pointerArr");

@@ -1,4 +1,4 @@
-window.onload = function main() {
+window.onload = () => {
   localStorage.setItem("OpontentNum", 0);
   let submit = document.getElementById("submit");
   let name = document.getElementById("name");
@@ -14,7 +14,7 @@ window.onload = function main() {
     "Hello ",
     " there was infestation in main building. We need you take care of it. Please be very careful. Cause these wild AGD's are really dangerous."
   ];
-  name.onkeyup = function () {
+  name.onkeyup = () => {
     let name2 = document.getElementById("name").value;
     if (name2 == "") {
       h3.innerHTML = "";
@@ -23,27 +23,27 @@ window.onload = function main() {
 
     }
   };
-  submit.onclick = function submit(name3) {
+  submit.onclick = (name3) => {
     let name2 = document.getElementById("name").value;
 
     localStorage.setItem("PlayerName", name2);
     console.log(localStorage)
     //person.innerHTML = name2;
     var showBref = briefText[0] + name2 + briefText[1];
-    setTimeout(function () {
+    setTimeout(()=> {
       title.style.display = "none";
       text.style.display = "block";
       animation.style.display = "block";
       var n = 0;
       var str = showBref;
       text2.innerHTML = "";
-      setInterval(function () {
+      setInterval(() => {
         n = n + 1;
         text2.innerHTML = str.slice(0, n);
       }, 80);
     }, 300);
   };
-  goNext.addEventListener("click", function () {
+  goNext.addEventListener("click", ()=> {
     location.replace("index_03.html")
   });
 };

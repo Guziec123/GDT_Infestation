@@ -53,7 +53,7 @@ window.onload = function main() {
     pointer.focus();
 
     //close overlay
-    overlay.onclick = function closeOverlay() {
+    overlay.onclick = ()=> {
 
         let enemyImage = (document.querySelector(".imageEnemy>img").src =
             data[enemyNumber].image);
@@ -74,13 +74,13 @@ window.onload = function main() {
         console.log(barEnterWidthInner)
         playerBar.style.width = barEnterWidthInner + "%";
         imagePlayer.classList.add("shake");
-
-        setTimeout(function () {
+        //shake function
+        setTimeout( ()=> {
             imagePlayer.classList.remove("shake");
             attack.disabled = false;
             attack2.disabled = false;
         }, 650);
-
+        //win function 
         if (enemyBar.style.width == 0 + "%") {
             overlay.style.display = "block";
             overlayH1.innerHTML = "You Defeted" + " " + data[enemyNumber].name;
@@ -92,12 +92,12 @@ window.onload = function main() {
             playerBar.style.width = 100 + "%";
             barEnterWidthInner = data[enemyNumber].hp2;
             enemyBar.style.width = data[enemyNumber].hp2 + "%";
-            setTimeout(function () {
+            setTimeout( ()=> {
                 location.replace(data[enemyNumber - 1].page);
             }, 1000);
 
         }
-
+        //lost function
         else if (playerBar.style.width == 0 + "%") {
             overlay.style.display = "block";
             overlayH1.innerHTML = "You Lost"
@@ -108,37 +108,37 @@ window.onload = function main() {
         }
     }
     // Attack with first button 
-    attack.onclick = function () {
+    attack.onclick =  ()=> {
         attack.disabled = true;
         attack2.disabled = true;
         imageEnemy.classList.add("shake");
         barEnterWidthInner = barEnterWidthInner - 10;
         enemyBar.style.width = barEnterWidthInner + "%";
-
-        setTimeout(function () {
+    //remove shake 
+        setTimeout( ()=>{
             imageEnemy.classList.remove("shake");
 
         }, 850);
-        setTimeout(function () {
+        setTimeout( ()=> {
             couterAttack();
         }, 2500);
     };
     // Attack with second button 
-    attack2.onclick = function () {
+    attack2.onclick =  ()=> {
         attack.disabled = true;
         attack2.disabled = true;
         imageEnemy.classList.add("shake");
-        barEnterWidthInner = barEnterWidthInner - 15;
+        barEnterWidthInner = barEnterWidthInner - 5;
         enemyBar.style.width = barEnterWidthInner + "%";
-        setTimeout(function () {
+        setTimeout( ()=> {
             imageEnemy.classList.remove("shake");
         }, 850);
-        setTimeout(function () {
+        setTimeout( ()=>{
             couterAttack();
         }, 2500);
     };
     //moving across buttons 
-    document.onkeydown = function (event) {
+    document.onkeydown =  (event) =>{
         switch (event.keyCode) {
             case 37:
                 attack2.classList.remove("pointerArr");
