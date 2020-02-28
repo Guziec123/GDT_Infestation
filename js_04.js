@@ -29,7 +29,8 @@ window.onload = function main() {
     //variables 
 
     var enemyNumber = localStorage.getItem("OpontentNum");
-
+    
+    var money = localStorage.setItem("money", 0);
     let playerName = document.getElementById("playerName").innerHTML = localStorage.getItem("PlayerName");
     let overlay = document.getElementById("overlay");
     let overlayH1 = document.getElementById("overlayH1");
@@ -101,7 +102,7 @@ window.onload = function main() {
         else if (playerBar.style.width == 0 + "%") {
             overlay.style.display = "block";
             overlayH1.innerHTML = "You Lost"
-            location.replace();
+            location.replace("continue.html");
         }
         else {
 

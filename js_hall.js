@@ -1,4 +1,5 @@
 window.onload = function main() {
+  var setLocation = localStorage.setItem("location", "hall.html");
   let shop = document.getElementById("shop");
   let elevator = document.getElementById("elevator");
   let left = document.getElementById("left");
@@ -37,7 +38,7 @@ window.onload = function main() {
   };
    //redirection after click
    go.onclick = ()=> {
-    if(right.classList.contains("pointerArr")){ location.replace("hall.html")}
+    if(right.classList.contains("pointerArr")){ location.replace("elevetor.html")}
     if(left.classList.contains("pointerArr")){ location.replace("shop.html")}
   }
 };

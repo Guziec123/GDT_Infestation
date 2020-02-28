@@ -36,10 +36,12 @@ body{
   font-family: 'Press Start 2P';
   margin-right:60px;
   cursor:pointer;
+  color: #4e4737;
 }
 .rightShelf{
   font-family: 'Press Start 2P';
   cursor:pointer;
+  color: #4e4737;
 }
 
 .mainImg{
@@ -59,6 +61,7 @@ body{
   background:#827c6c;
   margin-bottom:5px;
   margin-left:5px;
+  color: #4e4737;
 }
 .dialogBox>p{
   font-family: 'Press Start 2P';
@@ -106,4 +109,9 @@ body{
 }
 .money{
   font-family: 'Press Start 2P';
+}
+.price {
+  font-family: 'Press Start 2P';
+  color: #4e4737;
+  font-size:13px;
 }

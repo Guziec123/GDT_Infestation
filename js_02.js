@@ -1,5 +1,6 @@
 window.onload = () => {
   localStorage.setItem("OpontentNum", 0);
+  var setLocation = localStorage.setItem("location", "index_03.html");
   let submit = document.getElementById("submit");
   let name = document.getElementById("name");
   let title = document.querySelector(".titles");

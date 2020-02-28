@@ -1,4 +1,5 @@
 window.onload = () => {
+  var setLocation = localStorage.setItem("location", "index_03.html");
   var local = parseInt(localStorage.getItem("OpontentNum"));
   let all = document.getElementById("maininner");
   let attackAni = document.querySelector(".attackAnimation");
@@ -82,5 +83,9 @@ window.onload = () => {
         left.focus();
         break;
     }
-  };
+  }
+  go.onclick = ()=> {
+    if(right.classList.contains("pointerArr")){ location.replace("hall.html")}
+    if(left.classList.contains("pointerArr")){ location.replace("shop.html")}
+  }
 };
