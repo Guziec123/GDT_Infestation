@@ -1,5 +1,5 @@
 window.onload = ()=> {
-  var money = 50 //localStorage.getItem("money");
+  var money = localStorage.getItem("money");
   const buy = document.getElementById("shop");
   const goBack  = document.getElementById("goBack");
   const img1 = document.getElementById("img1");
@@ -8,7 +8,7 @@ window.onload = ()=> {
   const img4 = document.getElementById("img4");
   const img5 = document.getElementById("img5");
   const img6 = document.getElementById("img6");
-
+  
   showMoney = document.getElementById("money").innerHTML= money + "$"
   function pointerAdd(a, b){
     a.classList.add("pointerArr")
@@ -25,6 +25,7 @@ window.onload = ()=> {
   buy.onclick = function (){pointerAdd(buy, goBack)
   }
   goBack.onclick = function(){pointerAdd(goBack, buy) 
+    location.replace("hall.html")
   }
   img1.onclick = pointerAddclick;
   img2.onclick = pointerAddclick;

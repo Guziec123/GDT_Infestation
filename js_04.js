@@ -29,8 +29,9 @@ window.onload = function main() {
     //variables 
 
     var enemyNumber = localStorage.getItem("OpontentNum");
-    
-    var money = localStorage.setItem("money", 0);
+
+    var money = localStorage.getItem("money");
+    console.log(money)
     let playerName = document.getElementById("playerName").innerHTML = localStorage.getItem("PlayerName");
     let overlay = document.getElementById("overlay");
     let overlayH1 = document.getElementById("overlayH1");
@@ -54,7 +55,7 @@ window.onload = function main() {
     pointer.focus();
 
     //close overlay
-    overlay.onclick = ()=> {
+    overlay.onclick = () => {
 
         let enemyImage = (document.querySelector(".imageEnemy>img").src =
             data[enemyNumber].image);
@@ -76,7 +77,7 @@ window.onload = function main() {
         playerBar.style.width = barEnterWidthInner + "%";
         imagePlayer.classList.add("shake");
         //shake function
-        setTimeout( ()=> {
+        setTimeout(() => {
             imagePlayer.classList.remove("shake");
             attack.disabled = false;
             attack2.disabled = false;
@@ -88,12 +89,12 @@ window.onload = function main() {
             enemyNumber = parseInt(enemyNumber) + 1;
             var oponentSes = enemyNumber;
             localStorage.setItem("OpontentNum", oponentSes);
-            console.log(enemyNumber)
-            console.log(localStorage.getItem("OpontentNum"));
+            moneyStorage = parseInt(money) + 50;
+            money = localStorage.setItem("money", moneyStorage);
             playerBar.style.width = 100 + "%";
             barEnterWidthInner = data[enemyNumber].hp2;
             enemyBar.style.width = data[enemyNumber].hp2 + "%";
-            setTimeout( ()=> {
+            setTimeout(() => {
                 location.replace(data[enemyNumber - 1].page);
             }, 1000);
 
@@ -109,37 +110,37 @@ window.onload = function main() {
         }
     }
     // Attack with first button 
-    attack.onclick =  ()=> {
+    attack.onclick = () => {
         attack.disabled = true;
         attack2.disabled = true;
         imageEnemy.classList.add("shake");
         barEnterWidthInner = barEnterWidthInner - 10;
         enemyBar.style.width = barEnterWidthInner + "%";
-    //remove shake 
-        setTimeout( ()=>{
+        //remove shake 
+        setTimeout(() => {
             imageEnemy.classList.remove("shake");
 
         }, 850);
-        setTimeout( ()=> {
+        setTimeout(() => {
             couterAttack();
         }, 2500);
     };
     // Attack with second button 
-    attack2.onclick =  ()=> {
+    attack2.onclick = () => {
         attack.disabled = true;
         attack2.disabled = true;
         imageEnemy.classList.add("shake");
         barEnterWidthInner = barEnterWidthInner - 5;
         enemyBar.style.width = barEnterWidthInner + "%";
-        setTimeout( ()=> {
+        setTimeout(() => {
             imageEnemy.classList.remove("shake");
         }, 850);
-        setTimeout( ()=>{
+        setTimeout(() => {
             couterAttack();
         }, 2500);
     };
     //moving across buttons 
-    document.onkeydown =  (event) =>{
+    document.onkeydown = (event) => {
         switch (event.keyCode) {
             case 37:
                 attack2.classList.remove("pointerArr");

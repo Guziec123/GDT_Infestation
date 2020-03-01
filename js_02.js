@@ -1,4 +1,5 @@
 window.onload = () => {
+  var money = localStorage.setItem("money", 0);
   localStorage.setItem("OpontentNum", 0);
   var setLocation = localStorage.setItem("location", "index_03.html");
   let submit = document.getElementById("submit");

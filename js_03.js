@@ -1,6 +1,7 @@
 window.onload = () => {
   var setLocation = localStorage.setItem("location", "index_03.html");
   var local = parseInt(localStorage.getItem("OpontentNum"));
+  
   let all = document.getElementById("maininner");
   let attackAni = document.querySelector(".attackAnimation");
   let shop = document.getElementById("shop");
