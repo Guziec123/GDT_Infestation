@@ -16,7 +16,8 @@ window.onload = function main() {
             image: "http://nadwoch.pl/wp-content/uploads/2019/11/microwave-kopia-1-kopia.png",
             specialAttack: "",
             hp: 90,
-            hp2: 100
+            hp2: 100,
+            page: "elevetor.html"
         },
         {
             name: "person3",
@@ -83,7 +84,7 @@ window.onload = function main() {
             attack2.disabled = false;
         }, 650);
         //win function 
-        if (enemyBar.style.width == 0 + "%") {
+        if (enemyBar.style.width == 0 + "%"  ) {
             overlay.style.display = "block";
             overlayH1.innerHTML = "You Defeted" + " " + data[enemyNumber].name;
             enemyNumber = parseInt(enemyNumber) + 1;
