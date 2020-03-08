@@ -20,13 +20,14 @@ body{
   flex-direction:row;
 }
 .imgOverlay{
-  position:absolute;
+    position:absolute;
     top: 360px;
     left: 3%;
     bottom: 0;
     right: 0;
     width:400px;
     height:80px;
+    z-index:2;
 }
 .money{
   float:left;
@@ -114,4 +115,20 @@ body{
   font-family: 'Press Start 2P';
   color: #4e4737;
   font-size:13px;
+}
+.galleryImgcontainer{
+  position:absolute;
+  height:450px;
+  width:450px;
+  left:75;
+  top:75;
+  
+  border:1px solid black;
+  background:white;
+  z-index:3;
+}
+.galleryImgcontainer::before{
+  content:"x";
+  font-size: 20px;
+  font-weight: 900;
 }
