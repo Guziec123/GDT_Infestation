@@ -17,7 +17,6 @@ window.onload = () => {
     var n = 0;
     var str = " You enter the GDT and it seems oddly quiet .... too quiet... ";
 
-
     setInterval(() => {
       n = n + 1;
       epilog.innerHTML = str.slice(0, n);
