@@ -1,4 +1,4 @@
-window.onload = () => {
+document.addEventListener("DOMContentLoaded", ()=> {
   var setLocation = localStorage.setItem("location", "index_03.html");
   var local = parseInt(localStorage.getItem("OpontentNum"));
   
@@ -89,4 +89,4 @@ window.onload = () => {
     if(right.classList.contains("pointerArr")){ location.replace("hall.html")}
     if(left.classList.contains("pointerArr")){ location.replace("shop.html")}
   }
-};
+});

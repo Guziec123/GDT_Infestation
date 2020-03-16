@@ -1,4 +1,5 @@
-window.onload = () => {
+
+document.addEventListener("DOMContentLoaded", ()=> {
   //variables
   var count = document.getElementById("count");
   let overlay = document.getElementById("overlay");
@@ -42,4 +43,4 @@ window.onload = () => {
                   }
      
   }, 1500);
-};
+});

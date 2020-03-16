@@ -1,4 +1,5 @@
-window.onload = function main() {
+
+document.addEventListener("DOMContentLoaded", function main() {
     //enter data 
     var data = [
         {
@@ -156,4 +157,4 @@ window.onload = function main() {
                 break;
         }
     };
-};
+});

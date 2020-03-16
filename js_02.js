@@ -1,4 +1,4 @@
-window.onload = () => {
+document.addEventListener("DOMContentLoaded", ()=> {
   var money = localStorage.setItem("money", 0);
   localStorage.setItem("OpontentNum", 0);
   var setLocation = localStorage.setItem("location", "index_03.html");
@@ -48,4 +48,4 @@ window.onload = () => {
   goNext.addEventListener("click", ()=> {
     location.replace("index_03.html")
   });
-};
+});

@@ -1,4 +1,4 @@
-window.onload = () => {
+document.addEventListener("DOMContentLoaded", ()=> {
   var data = [
     {
       name: "img_1",
@@ -115,6 +115,6 @@ window.onload = () => {
   }
   addpointerAddClick()
 
-}
+});
 
 

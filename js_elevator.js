@@ -1,4 +1,5 @@
-window.onload = ()=> {
+
+document.addEventListener("DOMContentLoaded", ()=> {
  var data = [
     {
       image: "http://nadwoch.pl/wp-content/uploads/2019/10/adintro3.jpg"
@@ -50,4 +51,5 @@ window.onload = ()=> {
   img4.onclick = pointerAddclick;
   img5.onclick = pointerAddclick;
   img6.onclick = pointerAddclick;
-  }
+  
+  });

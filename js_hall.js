@@ -1,4 +1,5 @@
-window.onload = function main() {
+
+document.addEventListener("DOMContentLoaded", ()=> {
   var setLocation = localStorage.setItem("location", "hall.html");
   let shop = document.getElementById("shop");
   let elevator = document.getElementById("elevator");
@@ -41,4 +42,4 @@ window.onload = function main() {
     if(right.classList.contains("pointerArr")){ location.replace("elevetor.html")}
     if(left.classList.contains("pointerArr")){ location.replace("shop.html")}
   }
-};
+});
