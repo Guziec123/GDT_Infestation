@@ -23,7 +23,7 @@ window.onload = () => {
     }, 80);
   }, 300);
 
-
+//hide animation
   function hide_and_show() {
     if (local == 1) {
       epilog.style.display = "none";
@@ -58,7 +58,7 @@ window.onload = () => {
     c.classList.add("pointerArr");
     d.classList.remove("pointerArr");
   }
-
+//movement of arrows
   right.onclick = () => {
     pointerAdd(right, left, elevator, shop);
   };
@@ -84,6 +84,7 @@ window.onload = () => {
         break;
     }
   }
+  //location replace
   go.onclick = ()=> {
     if(right.classList.contains("pointerArr")){ location.replace("hall.html")}
     if(left.classList.contains("pointerArr")){ location.replace("shop.html")}
