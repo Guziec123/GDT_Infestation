@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
   money = localStorage.setItem("money", "150");
   var money = localStorage.getItem("money");
   let buy = document.getElementById("buy");
-
+  let checking = false;
   const goBack = document.getElementById("goBack");
   const img1btn = document.getElementById("img1btn");
   const img2btn = document.getElementById("img2btn");
@@ -58,13 +58,16 @@ document.addEventListener("DOMContentLoaded", ()=> {
     }
 
   }
-  createImg()
+  createImg();
+  //disable buy
+  
   //moneyyyyyy
   showMoney = document.getElementById("money").innerHTML = money + "$"
   //pointer add 
   function pointerAdd(a, b) {
     a.classList.add("pointerArr")
     b.classList.remove("pointerArr")
+  
   }
   //add/remove class on image click
   function pointerAddclick() {
@@ -72,13 +75,14 @@ document.addEventListener("DOMContentLoaded", ()=> {
     thisClick.classList.add("pointerArr")
     let mapPhotos = listOfPhotos.filter(numb => numb != thisClick)
     mapPhotos.map(num => num.classList.remove("pointerArr"))
+    return checking = true;
   }
   buy.onclick = function () {
     pointerAdd(buy, goBack)
     //add  image trigger 
-    console.log(money)
+    console.log(checking)
     function check() {
-      if (money >= 50) {
+      if (money >= 50 && checking == true) {
         moneyStorage = parseInt(money) - 50;
         money = localStorage.setItem("money", moneyStorage);
         money = localStorage.getItem("money");
