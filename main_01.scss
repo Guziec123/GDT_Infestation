@@ -370,22 +370,6 @@ h3 {
 
 
 
-
-
-
-#overlay {
-  position: fixed; /* Sit on top of the page content */
-  display: none; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
-}
 #overlayH1 {
   margin-top: 3%;
   color: #d1ad4b;
@@ -574,4 +558,126 @@ h3 {
   color: #4e4737;
   font-family: "Press Start 2P";
 }
+.fixhall{
+  top:365px!important;
+}
 
+
+.containercon {
+  height: 300px;
+  width: 100%;
+  display: flex;
+  flex-direction:row;
+}
+
+
+.containercon-inner{
+  height: 300px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.column-left {
+  background-size: 100% 100%;
+  width: 50%;
+}
+.left-inner {
+  width: 100%;
+  height: 300px;
+  background-size: cover !important;
+  //background:url("http://nadwoch.pl/wp-content/uploads/2019/12/game_over-kopia1.png");
+}
+#image {
+  width: 100%;
+  height: 250px;
+  background: url("http://nadwoch.pl/wp-content/uploads/2019/12/game_over-kopia1.png");
+  background-repeat: no-repeat;
+  background-size: cover!important;
+  animation: person infinite;
+  animation-duration: 1.2s;
+}
+.column-right {
+  width: 50%;
+}
+#count {
+  font-size: 200px;
+  margin-left: 30%;
+  margin-top: 20%;
+}
+@keyframes continue {
+  0%{
+     background: url("http://nadwoch.pl/wp-content/uploads/2019/12/game_over-kopia1.png");
+    background-repeat: no-repeat;
+    background-size: cover ;
+  }
+  100%{
+    background: url("http://nadwoch.pl/wp-content/uploads/2019/12/game_over-kopia4.png");
+    background-repeat: no-repeat;
+    background-size: cover ;
+  }
+}
+@keyframes person {
+  0% {
+    background: url("http://nadwoch.pl/wp-content/uploads/2019/12/game_over-kopia1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  25% {
+    background: url("http://nadwoch.pl/wp-content/uploads/2019/12/game_over-kopia1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  50% {
+    background: url("http://nadwoch.pl/wp-content/uploads/2019/12/game_over-kopia2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  75% {
+    background: url("http://nadwoch.pl/wp-content/uploads/2019/12/game_over-kopia3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  100% {
+    background: url("http://nadwoch.pl/wp-content/uploads/2019/12/game_over-kopia2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+.menu {
+  margin: 0px 0 0 25%;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+.continue {
+  margin: 0px 0px 0 33% !important;
+  font-size: 2.5em;
+  font-weight: 900;
+}
+#overlay {
+  position: fixed; 
+  display: none; 
+  width: 100%; 
+  height: 100%; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 2; 
+  cursor: pointer;
+}
+#overlayH1 {
+  margin-top: 10%;
+  color: #d1ad4b;
+  font-size:3.2em;
+}
+button{
+  background:none;
+  border:none;
+  font-family: "Press Start 2P", sans-serif;
+  color: #4e4737;
+  font-size:1.1em;
+  font-weight:700;
+  cursor:pointer;
+}
