@@ -1,55 +1,92 @@
-
 document.addEventListener("DOMContentLoaded", ()=> {
- var data = [
-    {
-      image: "http://nadwoch.pl/wp-content/uploads/2019/10/adintro3.jpg"
-    },
-    { image: "http://nadwoch.pl/wp-content/uploads/2019/10/adintro3.jpg"
-
-    }
-  ]
-  var money = localStorage.getItem("money");
-  let buy = document.getElementById("buy");
-  const goBack  = document.getElementById("goBack");
-  const img1 = document.getElementById("img1");
-  const img2 = document.getElementById("img2");
-  const img3 = document.getElementById("img3");
-  const img4 = document.getElementById("img4");
-  const img5 = document.getElementById("img5");
-  const img6 = document.getElementById("img6");
-  let listOfPhotos = [img1,img2,img3,img4,img5,img6]
-  showMoney = document.getElementById("money").innerHTML= money + "$"
-  function pointerAdd(a, b){
-    a.classList.add("pointerArr")
-    b.classList.remove("pointerArr")
-  }
-
-  function pointerAddclick(){
-     var thisClick = document.getElementById(this.id);
-     thisClick.classList.add("pointerArr")
-     let mapPhotos = listOfPhotos.filter(numb=>numb!=thisClick)
-     mapPhotos.map(num => num.classList.remove("pointerArr"))
-  }
-  buy.onclick = function (){pointerAdd(buy, goBack)
-    
-    function check(){
-      for(var i = 0; i < listOfPhotos.length; i++ ){
-      if(listOfPhotos[i].classList.contains("pointerArr")){
-        listOfPhotos[i].style.color = "black";
-          }
-        }    
-      }
-      check();
- 
-  }
-  goBack.onclick = function(){pointerAdd(goBack, buy) 
-    location.replace("hall.html")
-  }
-  img1.onclick = pointerAddclick;
-  img2.onclick = pointerAddclick;
-  img3.onclick = pointerAddclick;
-  img4.onclick = pointerAddclick;
-  img5.onclick = pointerAddclick;
-  img6.onclick = pointerAddclick;
+  var setLocation = localStorage.setItem("location", "elevator.html");
+  var local = parseInt(localStorage.getItem("OpontentNum"));
   
-  });
+  let all = document.getElementById("maininner");
+  let attackAni = document.querySelector(".attackAnimation");
+  let shop = document.getElementById("shop");
+  let elevator = document.getElementById("elevator");
+  let left = document.getElementById("left");
+  let right = document.getElementById("right");
+  var epilog = document.getElementById("epilog");
+  let imgOverlay = document.querySelector('.imgOverlay');
+  let shelfleft = document.querySelector(".leftShelf");
+  let shelfright = document.querySelector(".rightShelf");
+  let dialog = document.getElementById("dialog");
+  setTimeout(() => {
+    var n = 0;
+    var str = " Something is wrong.... ";
+
+    setInterval(() => {
+      n = n + 1;
+      epilog.innerHTML = str.slice(0, n);
+    }, 80);
+  }, 300);
+
+//hide animation
+  function hide_and_show() {
+    if (local == 2) {
+      epilog.style.display = "none";
+      imgOverlay.style.top = "370px";
+      left.disabled = false;
+      right.disabled = false;
+    } else {
+      //button disable
+      shelfright.style.display = "none";
+      shelfleft.style.display = "none";
+      dialog.style.display = "none";
+      left.style.display = "none";
+      right.style.display = "none";
+      left.disabled = true;
+      right.disabled = true;
+      //fride enter
+      setTimeout(() => {
+        epilog.style.display = "none";
+        all.style.display = "none";
+        attackAni.style.display = "block";
+        setTimeout(() => {
+          location.replace("index_04.html");
+        }, 2500)
+      }, 4000);
+    }
+  }
+  hide_and_show();
+//declaration of buttons function
+  function pointerAdd(a, b, c, d) {
+    a.classList.add("pointerArr");
+    b.classList.remove("pointerArr");
+    c.classList.add("pointerArr");
+    d.classList.remove("pointerArr");
+  }
+//movement of arrows
+  right.onclick = () => {
+    pointerAdd(right, left, elevator, shop);
+  };
+  left.onclick = () => {
+    pointerAdd(left, right, shop, elevator);
+  };
+  document.onkeydown = (event) => {
+    switch (event.keyCode) {
+      case 37:
+        right.classList.remove("pointerArr");
+        left.classList.add("pointerArr");
+        elevator.classList.remove("pointerArr");
+        shop.classList.add("pointerArr");
+        right.focus();
+        break;
+
+      case 39:
+        left.classList.remove("pointerArr");
+        right.classList.add("pointerArr");
+        shop.classList.remove("pointerArr");
+        elevator.classList.add("pointerArr");
+        left.focus();
+        break;
+    }
+  }
+  //location replace
+  go.onclick = ()=> {
+    if(right.classList.contains("pointerArr")){ location.replace("hall.html")}
+    if(left.classList.contains("pointerArr")){ location.replace("shop.html")}
+  }
+});

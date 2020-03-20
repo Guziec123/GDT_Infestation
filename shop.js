@@ -28,8 +28,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
 
     }
   ]
-  //var money = localStorage.getItem("money");
-  money = localStorage.setItem("money", "150");
+  
   var money = localStorage.getItem("money");
   let buy = document.getElementById("buy");
   let checking = false;

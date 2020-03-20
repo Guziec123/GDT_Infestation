@@ -126,7 +126,7 @@ h3 {
   background: none;
   cursor: pointer;
   color: #4e4737;
-  border: 2px $textColor solid;
+  border: 2px black solid;
   width: 100px;
   height: 50px;
   font-size: 18px;
@@ -200,22 +200,6 @@ h3 {
   font-size: 1.3em;
   color: #4e4737;
 }
-#goThere {
-  position: absolute;
-  top: 370px;
-  left: 150px;
-  background: none;
-  cursor: pointer;
-  color: #4e4737;
-  border: 2px $textColor solid;
-  width: 100px;
-  height: 50px;
-  font-size: 18px;
-  font-weight: 700;
-  border-radius: 0;
-  z-index: 10;
-  margin: 0 auto;
-}
 
 #headAnimation {
   position: absolute;
@@ -249,16 +233,13 @@ h3 {
   }
 }
 
-
-
-
-
 .attackAnimation {
   width: 100%;
   height: 100%;
   display: none;
   background: url("http://nadwoch.pl/wp-content/uploads/2019/11/tło_bitwa.jpg");
 }
+
 #attacker {
   position: absolute;
   animation: attacker linear forwards;
@@ -297,18 +278,18 @@ h3 {
   margin-right: 60px;
   font-family: "Press Start 2P";
   color: #655e54;
+  cursor: pointer;
 }
 .rightShelf {
   font-family: "Press Start 2P";
   color: #655e54;
+  cursor:pointer;
 }
 
 .mainImg {
   width: 100%;
   margin-bottom: 40px;
 }
-
-
 
 .dialogBox {
   border: 2px solid #4e473f;
@@ -338,7 +319,7 @@ h3 {
   cursor: pointer;
 }
 .pointerArr::before {
-  postion: absolute;
+
   margin-right: 5px;
   margin-bottom: 2px;
   content: " ";
@@ -364,18 +345,11 @@ h3 {
   cursor: pointer!important;
 }
 
-
-
-
-
-
-
 #overlayH1 {
   margin-top: 3%;
   color: #d1ad4b;
   font-family: "Press Start 2P";
 }
-
 
 .RowEnemy {
   display: flex;
@@ -513,7 +487,6 @@ h3 {
  
 }
 
-
 .shake {
   animation: shake 0.5s;
   animation-iteration-count: infinite;
@@ -562,14 +535,12 @@ h3 {
   top:365px!important;
 }
 
-
 .containercon {
   height: 300px;
   width: 100%;
   display: flex;
   flex-direction:row;
 }
-
 
 .containercon-inner{
   height: 300px;
@@ -680,4 +651,83 @@ button{
   font-size:1.1em;
   font-weight:700;
   cursor:pointer;
+}
+.epilog-elevator-fix{
+  height:25px!important;
+}
+
+.imgOverlay-elvator-fix{
+  top:360px!important;
+}
+
+.imgOverlay-shop-fix{
+  top: 360px!important;
+  left: 3%!important;
+  width:400px;
+  height:80px;
+  z-index:2;
+}
+.money{
+  float:left;
+   margin:0 100px 0 0;
+}
+
+.mainImg-shop-fix{
+  height:350px;
+}
+
+
+.dialogBox-shop-fix-height{
+  height:30%!important;
+}
+
+.leftShelf-shop-padding-fix{
+  margin-right: 40px!important;
+}
+
+.photos{
+  display:flex;
+  flex-direction: row;
+  margin:0px 0px 0px 
+}
+.buttons {
+  padding:10px 0px 10px 20px;
+  cursor:pointer;
+  background:none;
+  border:0px;
+  font-family: 'Press Start 2P';
+  font-weight:500;
+  color:#4e4737;
+  opacity:0.6;
+}
+.money{
+  font-family: 'Press Start 2P';
+}
+.price {
+  font-family: 'Press Start 2P';
+  color: #4e4737;
+  font-size:13px;
+}
+.galleryImgcontainer{
+  position:absolute;
+  height:auto;
+  width:450px;
+  left:75;
+  top:35;
+  display:none;
+  border:1px solid black;
+  background:white;
+  z-index:3;
+}
+.close{
+  z-index: 10;
+  font-size: 20px;
+  font-weight: 900;
+  float:right;
+  margin-right:10px;
+  cursor:pointer;
+}
+.pic{
+  width:450px;
+  height:auto;
 }
