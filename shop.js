@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
   ]
   
   var money = localStorage.getItem("money");
+  var localization = localStorage.getItem("location")
   let buy = document.getElementById("buy");
   let checking = false;
   const goBack = document.getElementById("goBack");
@@ -110,7 +111,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
   //goback to previous screen
   goBack.onclick = function () {
     pointerAdd(goBack, buy)
-    location.replace("hall.html")
+    location.replace(localization)
   }
   //add class onclick
   function addpointerAddClick() {

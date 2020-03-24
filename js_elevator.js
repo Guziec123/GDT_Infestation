@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", ()=> {
-  var setLocation = localStorage.setItem("location", "elevator.html");
+  var setLocation = localStorage.setItem("location", "elevetor.html");
   var local = parseInt(localStorage.getItem("OpontentNum"));
   
   let all = document.getElementById("maininner");
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
   }
   //location replace
   go.onclick = ()=> {
-    if(right.classList.contains("pointerArr")){ location.replace("hall.html")}
+    if(right.classList.contains("pointerArr")){ location.replace("openspace.html")}
     if(left.classList.contains("pointerArr")){ location.replace("shop.html")}
   }
 });

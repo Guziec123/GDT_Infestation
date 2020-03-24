@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", function main() {
             page: "elevetor.html"
         },
         {
-            name: "person3",
-            image: "//static.pokemonpets.com/images/monsters-images-300-300/2025-Shiny-Pikachu.png",
+            name: "Washer Machine",
+            image: "http://nadwoch.pl/wp-content/uploads/2020/03/washermaichnen.jpg",
             specialAttack: "",
             hp: 100,
             hp2: 100
@@ -31,9 +31,7 @@ document.addEventListener("DOMContentLoaded", function main() {
     //variables 
 
     var enemyNumber = localStorage.getItem("OpontentNum");
-
     var money = localStorage.getItem("money");
-    console.log(money)
     let playerName = document.getElementById("playerName").innerHTML = localStorage.getItem("PlayerName");
     let overlay = document.getElementById("overlay");
     let overlayH1 = document.getElementById("overlayH1");
@@ -75,7 +73,6 @@ document.addEventListener("DOMContentLoaded", function main() {
         let enemyHealth = (document.querySelector(".barProgresEnemy").style.width =
             data[enemyNumber].hp + "%");
         barEnterWidthInner = barEnterWidthInner - 5;
-        console.log(barEnterWidthInner)
         playerBar.style.width = barEnterWidthInner + "%";
         imagePlayer.classList.add("shake");
         //shake function
@@ -85,7 +82,9 @@ document.addEventListener("DOMContentLoaded", function main() {
             attack2.disabled = false;
         }, 650);
         //win function 
-        if (enemyBar.style.width == 0 + "%"  ) {
+
+        if (barEnterWidth <= 0) {
+            // if (enemyBar.style.width <= 0 + "%" ) {
             overlay.style.display = "block";
             overlayH1.innerHTML = "You Defeted" + " " + data[enemyNumber].name;
             enemyNumber = parseInt(enemyNumber) + 1;
@@ -94,14 +93,18 @@ document.addEventListener("DOMContentLoaded", function main() {
             moneyStorage = parseInt(money) + 50;
             money = localStorage.setItem("money", moneyStorage);
             playerBar.style.width = 100 + "%";
+            barEnterWidth = data[enemyNumber].hp;
             barEnterWidthInner = data[enemyNumber].hp2;
             enemyBar.style.width = data[enemyNumber].hp2 + "%";
+
+
             setTimeout(() => {
                 location.replace(data[enemyNumber - 1].page);
             }, 1000);
 
         }
         //lost function
+
         else if (playerBar.style.width == 0 + "%") {
             overlay.style.display = "block";
             overlayH1.innerHTML = "You Lost"
@@ -111,13 +114,26 @@ document.addEventListener("DOMContentLoaded", function main() {
 
         }
     }
+
+
+    function randomForceFunc(enterNum){
+           let punchForceRan=  Math.random()*enterNum;
+           return Math.round(punchForceRan)
+
+            };   
     // Attack with first button 
     attack.onclick = () => {
         attack.disabled = true;
         attack2.disabled = true;
         imageEnemy.classList.add("shake");
-        barEnterWidthInner = barEnterWidthInner - 10;
-        enemyBar.style.width = barEnterWidthInner + "%";
+
+        
+
+        barEnterWidth = barEnterWidth - randomForceFunc(12);
+        console.log(barEnterWidth)
+        enemyBar.style.width = barEnterWidth + "%";
+
+
         //remove shake 
         setTimeout(() => {
             imageEnemy.classList.remove("shake");
@@ -132,8 +148,11 @@ document.addEventListener("DOMContentLoaded", function main() {
         attack.disabled = true;
         attack2.disabled = true;
         imageEnemy.classList.add("shake");
-        barEnterWidthInner = barEnterWidthInner - 5;
-        enemyBar.style.width = barEnterWidthInner + "%";
+
+        barEnterWidth = barEnterWidth - randomForceFunc(7);
+        console.log(barEnterWidth)
+        enemyBar.style.width = barEnterWidth + "%";
+
         setTimeout(() => {
             imageEnemy.classList.remove("shake");
         }, 850);

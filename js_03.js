@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", ()=> {
-  var setLocation = localStorage.setItem("location", "index_03.html");
-  var local = parseInt(localStorage.getItem("OpontentNum"));
+  let setLocation = localStorage.setItem("location", "index_03.html");
+  let local = parseInt(localStorage.getItem("OpontentNum"));
   
   let all = document.getElementById("maininner");
   let attackAni = document.querySelector(".attackAnimation");
@@ -8,11 +8,12 @@ document.addEventListener("DOMContentLoaded", ()=> {
   let elevator = document.getElementById("elevator");
   let left = document.getElementById("left");
   let right = document.getElementById("right");
-  var epilog = document.getElementById("epilog");
+  let epilog = document.getElementById("epilog");
   let imgOverlay = document.querySelector('.imgOverlay');
   let shelfleft = document.querySelector(".leftShelf");
   let shelfright = document.querySelector(".rightShelf");
   let dialog = document.getElementById("dialog");
+
   setTimeout(() => {
     var n = 0;
     var str = " You enter the GDT and it seems oddly quiet .... too quiet... ";
@@ -25,12 +26,16 @@ document.addEventListener("DOMContentLoaded", ()=> {
 
 //hide animation
   function hide_and_show() {
+
     if (local == 1) {
       epilog.style.display = "none";
       imgOverlay.style.top = "370px";
       left.disabled = false;
       right.disabled = false;
-    } else {
+    } 
+
+    else{
+
       //button disable
       shelfright.style.display = "none";
       shelfleft.style.display = "none";
@@ -39,16 +44,20 @@ document.addEventListener("DOMContentLoaded", ()=> {
       right.style.display = "none";
       left.disabled = true;
       right.disabled = true;
+
       //fride enter
       setTimeout(() => {
         epilog.style.display = "none";
         all.style.display = "none";
         attackAni.style.display = "block";
+
         setTimeout(() => {
           location.replace("index_04.html");
         }, 2500)
       }, 8000);
+
     }
+
   }
   hide_and_show();
 //declaration of buttons function
@@ -58,13 +67,16 @@ document.addEventListener("DOMContentLoaded", ()=> {
     c.classList.add("pointerArr");
     d.classList.remove("pointerArr");
   }
+
 //movement of arrows
-  right.onclick = () => {
+  right.addEventListener("click", ()=>{
     pointerAdd(right, left, elevator, shop);
-  };
-  left.onclick = () => {
+  });
+
+  left.addEventListener("click", ()=>{
     pointerAdd(left, right, shop, elevator);
-  };
+  });
+
   document.onkeydown = (event) => {
     switch (event.keyCode) {
       case 37:
@@ -84,9 +96,11 @@ document.addEventListener("DOMContentLoaded", ()=> {
         break;
     }
   }
+
   //location replace
-  go.onclick = ()=> {
+  go.addEventListener("click", ()=>{
     if(right.classList.contains("pointerArr")){ location.replace("hall.html")}
     if(left.classList.contains("pointerArr")){ location.replace("shop.html")}
-  }
+  });
+
 });

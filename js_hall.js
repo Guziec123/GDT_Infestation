@@ -1,23 +1,29 @@
 
 document.addEventListener("DOMContentLoaded", ()=> {
   var setLocation = localStorage.setItem("location", "hall.html");
+
   let shop = document.getElementById("shop");
   let elevator = document.getElementById("elevator");
   let left = document.getElementById("left");
   let right = document.getElementById("right");
   let go = document.getElementById("go");
+ 
+
   function pointerAdd(a, b, c, d) {
     a.classList.add("pointerArr");
     b.classList.remove("pointerArr");
     c.classList.add("pointerArr");
     d.classList.remove("pointerArr");
   }
-  right.onclick = function() {
+  
+  right.addEventListener("click", ()=>{
     pointerAdd(right, left, elevator, shop);
-  };
-  left.onclick = function() {
+  });
+
+  left.addEventListener("click", ()=>{
     pointerAdd(left, right, shop, elevator);
-  };
+  });
+
   document.onkeydown = function(event) {
     switch (event.keyCode) {
       case 37:
@@ -37,9 +43,9 @@ document.addEventListener("DOMContentLoaded", ()=> {
         break;
     }
   };
-   //redirection after click
-   go.onclick = ()=> {
-    if(right.classList.contains("pointerArr")){ location.replace("elevetor.html")}
-    if(left.classList.contains("pointerArr")){ location.replace("shop.html")}
-  }
+
+     go.addEventListener("click", ()=>{
+      if(right.classList.contains("pointerArr")){ location.replace("elevetor.html")}
+      if(left.classList.contains("pointerArr")){ location.replace("shop.html")}
+     });
 });
