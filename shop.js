@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
   const img6btn = document.getElementById("img6btn");
   let listOfPhotos = [img1btn, img2btn, img3btn, img4btn, img5btn, img6btn];
   let listOfimgCon = document.getElementsByClassName("galleryImgcontainer");
+
   //image creation
   function createImg() {
     for (let i = 0; i < data.length; i++) {
@@ -118,6 +119,13 @@ document.addEventListener("DOMContentLoaded", ()=> {
     listOfPhotos.map(btn => btn.onclick = pointerAddclick)
   }
   addpointerAddClick()
+
+  //moving slider with photos 
+
+  function slider(){
+    
+  }
+
 
 });
 

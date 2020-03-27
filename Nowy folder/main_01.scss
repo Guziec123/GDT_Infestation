@@ -368,8 +368,6 @@ h3 {
 }
 .barEnemy {
   margin-left: 50px;
-  border-left: 5px solid $bordercolor;
-  border-bottom: 5px solid $bordercolor;
   border-radius: 5px;
   height: 50px;
 }
@@ -438,8 +436,6 @@ h3 {
   float: right;
 }
 .barPlayer {
-  border-left: 5px solid $bordercolor;
-  border-bottom: 5px solid $bordercolor;
   margin-top: 0px;
   border-radius: 5px;
   height: 50px;
@@ -556,7 +552,7 @@ h3 {
   width: 100%;
   height: 300px;
   background-size: cover !important;
-  //background:url("http://nadwoch.pl/wp-content/uploads/2019/12/game_over-kopia1.png");
+  
 }
 #image {
   width: 100%;
@@ -684,6 +680,9 @@ button{
 .leftShelf-shop-padding-fix{
   margin-right: 40px!important;
 }
+.leftShelf-openspace-padding-fix{
+  margin-right: 40px!important;
+}
 
 .photos{
   display:flex;
@@ -733,4 +732,19 @@ button{
 }
 .mainImg-openspace-fix{
 height:360px!important;
+}
+.fix-kitchen{
+  top: 360px!important;
+}
+.imgOverlay-fix{
+  position: absolute;
+  left:0!important;
+}
+.password{
+  position: absolute;
+  top:15%;
+  left:20%;
+  display:block;
+
+
 }

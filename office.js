@@ -1,22 +1,22 @@
 
 document.addEventListener("DOMContentLoaded", ()=> {
-    var setLocation = localStorage.setItem("location", "openspace.html");
+    var setLocation = localStorage.setItem("location", "office.html");
   
-    let shop = document.getElementById("shop");
-    let elevator = document.getElementById("elevator");
+    
     let left = document.getElementById("left");
     let right = document.getElementById("right");
     let go = document.getElementById("go");
-    let kitchen = document.getElementById("kitchen");
-    let office = document.getElementById("office");
-    let directions = [shop,office,kitchen]
-
+    let goback = document.getElementById("goback");
+    let boss = document.getElementById("boss");
+    let shop = document.getElementById("shop");
+    let directions = [shop,boss,goback];
     function movingArrows(){
+       
       n = 2
       left.addEventListener("click", ()=>{
         if (n > 0){ 
           n--
-          let clasRemoveNum = n+1 
+          let clasRemoveNum = n+1 ;
           directions[clasRemoveNum].classList.remove("pointerArr")
           directions[n].classList.add("pointerArr");
           right.classList.remove("pointerArr");
@@ -39,8 +39,8 @@ document.addEventListener("DOMContentLoaded", ()=> {
 
   
        go.addEventListener("click", ()=>{
-        if(kitchen.classList.contains("pointerArr")){ location.replace("kitchen.html")}
-        if(office.classList.contains("pointerArr")){ location.replace("office.html")}
+        if(goback.classList.contains("pointerArr")){ location.replace("openspace.html")}
+        if(boss.classList.contains("pointerArr")){ location.replace("office.html")}
         if(shop.classList.contains("pointerArr")){ location.replace("shop.html")}
        });
   });

@@ -25,7 +25,16 @@ document.addEventListener("DOMContentLoaded", function main() {
             image: "http://nadwoch.pl/wp-content/uploads/2020/03/washermaichnen.jpg",
             specialAttack: "",
             hp: 100,
-            hp2: 100
+            hp2: 100,
+            page: "kitchen.html"
+        },
+        {
+            name: "person3",
+            image: "http://nadwoch.pl/wp-content/uploads/2020/03/washermaichnen.jpg",
+            specialAttack: "",
+            hp: 100,
+            hp2: 100,
+            page: "kitchen.html"
         }
     ];
     //variables 
