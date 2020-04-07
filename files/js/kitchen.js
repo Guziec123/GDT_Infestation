@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", ()=> {
     var setLocation = localStorage.setItem("location", "kitchen.html");
-    var local = parseInt(localStorage.getItem("OpontentNum"));
+    var local = parseInt(localStorage.getItem("OpontentNum" ));
     
-    let all = document.getElementById("maininner");
+    let all = document.getElementById("imgOverlayInner");
     let attackAni = document.querySelector(".attackAnimation");
     let shop = document.getElementById("shop");
     let left = document.getElementById("left");
@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", ()=> {
     let openspace = document.getElementById("openspace")
     let closebtn = document.getElementById("close");
     let passShow = document.getElementById("passShow");
+    let mainImg= document.getElementById("mainImg");
+    
 
   ///typing effect
     setTimeout(() => {
@@ -35,6 +37,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
         imgOverlay.style.top = "370px";
         left.disabled = false;
         right.disabled = false;
+        password.style.display = "block";
       } else {
         //button disable
         shelfright.style.display = "none";
@@ -42,12 +45,14 @@ document.addEventListener("DOMContentLoaded", ()=> {
         dialog.style.display = "none";
         left.style.display = "none";
         right.style.display = "none";
+        password.style.display = "none";
         left.disabled = true;
         right.disabled = true;
         //fride enter
         setTimeout(() => {
           epilog.style.display = "none";
-          all.style.display = "none";
+           all.style.display = "none";
+           mainImg.style.display = "none";
           attackAni.style.display = "block";
           setTimeout(() => {
             location.replace("index_04.html");

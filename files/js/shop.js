@@ -120,12 +120,6 @@ document.addEventListener("DOMContentLoaded", ()=> {
   }
   addpointerAddClick()
 
-  //moving slider with photos 
-
-  function slider(){
-    
-  }
-
 
 });
 

@@ -29,12 +29,20 @@ document.addEventListener("DOMContentLoaded", function main() {
             page: "kitchen.html"
         },
         {
-            name: "person3",
-            image: "http://nadwoch.pl/wp-content/uploads/2020/03/washermaichnen.jpg",
+            name: "Evil R. Bosch",
+            image: "http://nadwoch.pl/wp-content/uploads/2020/03/robert.png",
             specialAttack: "",
             hp: 100,
             hp2: 100,
-            page: "kitchen.html"
+            page: "credits.html"
+        },
+        {
+            name: "Evil Robert Bosch",
+            image: "http://nadwoch.pl/wp-content/uploads/2020/03/robert.png",
+            specialAttack: "",
+            hp: 100,
+            hp2: 100,
+            page: "credits.html"
         }
     ];
     //variables 
@@ -99,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function main() {
             enemyNumber = parseInt(enemyNumber) + 1;
             var oponentSes = enemyNumber;
             localStorage.setItem("OpontentNum", oponentSes);
-            moneyStorage = parseInt(money) + 50;
+            moneyStorage = parseInt(money) + 100;
             money = localStorage.setItem("money", moneyStorage);
             playerBar.style.width = 100 + "%";
             barEnterWidth = data[enemyNumber].hp;
@@ -158,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function main() {
         attack2.disabled = true;
         imageEnemy.classList.add("shake");
 
-        barEnterWidth = barEnterWidth - randomForceFunc(7);
+        barEnterWidth = barEnterWidth - randomForceFunc(8);
         console.log(barEnterWidth)
         enemyBar.style.width = barEnterWidth + "%";
 

@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
   
        go.addEventListener("click", ()=>{
         if(goback.classList.contains("pointerArr")){ location.replace("openspace.html")}
-        if(boss.classList.contains("pointerArr")){ location.replace("office.html")}
+        if(boss.classList.contains("pointerArr")){ location.replace("boss.html")}
         if(shop.classList.contains("pointerArr")){ location.replace("shop.html")}
        });
   });

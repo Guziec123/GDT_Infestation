@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
     if (counter === 0) {
        overlay.style.display = "block";
        setTimeout(()=>{
-            location.replace("index_01.html");
+            location.replace("../start.html");
            },3000
        );
       
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
       overlay.style.display = "block";
       setTimeout(function(){
           
-           location.replace("index_01.html");
+           location.replace("../start.html");
        
       },2000);
      

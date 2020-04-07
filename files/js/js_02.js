@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", ()=> {
-
   let money = localStorage.setItem("money", 0);
-    localStorage.setItem("OpontentNum", 0);
+  localStorage.setItem("OpontentNum", 0);
   let setLocation = localStorage.setItem("location", "index_03.html");
-
   let submit = document.getElementById("submit");
   let name = document.getElementById("name");
   let title = document.querySelector(".titles");
