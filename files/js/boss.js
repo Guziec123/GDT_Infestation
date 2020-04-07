@@ -78,10 +78,11 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => word.classList.remove("wrong"), 1000)
     }
 
-   
-
   })
-
+  let back = document.getElementById("goback_Boss")
+  back.addEventListener("click", ()=>{
+    location.replace("office.html")
+  },1000)
 
 });
 
