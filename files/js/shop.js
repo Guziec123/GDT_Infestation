@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", ()=> {
     }
   ]
   
-  var money = localStorage.getItem("money");
-  var localization = localStorage.getItem("location")
+  let money = localStorage.getItem("money");
+  let localization = localStorage.getItem("location")
   let buy = document.getElementById("buy");
   let checking = false;
   const goBack = document.getElementById("goBack");
@@ -46,8 +46,8 @@ document.addEventListener("DOMContentLoaded", ()=> {
   //image creation
   function createImg() {
     for (let i = 0; i < data.length; i++) {
-      var pic = document.createElement("img");
-      var closeX = document.createElement("span");
+      let pic = document.createElement("img");
+      let closeX = document.createElement("span");
       closeX.id = data[i].name
       closeX.className = "close"
       closeX.innerHTML = "&times;"
@@ -81,18 +81,24 @@ document.addEventListener("DOMContentLoaded", ()=> {
   buy.onclick = function () {
     pointerAdd(buy, goBack)
     //add  image trigger 
-    console.log(checking)
+    
     function check() {
+      let sztosText = document.getElementById("epilog-sztos")
       if (money >= 50 && checking == true) {
         moneyStorage = parseInt(money) - 50;
         money = localStorage.setItem("money", moneyStorage);
         money = localStorage.getItem("money");
         showMoney = document.getElementById("money").innerHTML = moneyStorage + "$";
-        
+
+        ///sztos-text show
+        sztosText.style.display = "block";
+        setTimeout (()=>{sztosText.style.display="none"; },2000);
+
         for (var i = 0; i < listOfPhotos.length; i++) {
           if (listOfPhotos[i].classList.contains("pointerArr")) {
             listOfPhotos[i].style.color = "black";
             listOfimgCon[i].style.display = "block";
+
           }
         }
       }
@@ -102,7 +108,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
   }
 
   //close image
-  var closebtns = document.getElementsByClassName("close");
+  let closebtns = document.getElementsByClassName("close");
   for (var i = 0; i < closebtns.length; i++) {
     closebtns[i].addEventListener("click", function () {
       this.parentElement.style.display = 'none';

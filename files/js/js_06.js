@@ -1,13 +1,13 @@
 
 document.addEventListener("DOMContentLoaded", ()=> {
   //variables
-  var count = document.getElementById("count");
+  let count = document.getElementById("count");
   let overlay = document.getElementById("overlay");
   let image = document.getElementById("image");
   let yes = document.getElementById("yes");
   let no = document.getElementById("no");
-  var counter = 10;
-  var countdown = setInterval(function() {
+  let counter = 10;
+  let countdown = setInterval(function() {
     counter--;
     count.innerHTML = counter;
     if (counter === 0) {

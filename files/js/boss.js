@@ -28,6 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
     "Z"
   ];
 
+
+
+
   ///show letters 
   function showLetters(letters) {
     return `
@@ -66,11 +69,30 @@ document.addEventListener("DOMContentLoaded", () => {
   let checked = document.getElementById("checked");
   checked.addEventListener("click", () => {
     let pass = "FAREWELL"
+    let all = document.getElementById("panel");
+    let attackAni = document.querySelector(".attackAnimation");
     typedJoin = typed.join("");
 
     if (typedJoin == pass) {
       word.classList.add("accept")
-      setTimeout( ()=>{location.replace("index_04.html")},1000)
+
+      function hide_and_show() {
+    
+          setTimeout(() => {
+            
+            all.style.display = "none";
+            attackAni.style.display = "block";
+            setTimeout(() => {
+              location.replace("index_04.html");
+            },2500)
+          }, 1000);
+        }
+      
+      hide_and_show()
+
+
+    
+      //setTimeout( ()=>{location.replace("index_04.html")},1000)
     }
     else {
 
